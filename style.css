@@ -1332,14 +1332,13 @@ a, button, .ripple-card, .nav-link, .social-link {
 
 .hero-description {
     font-size: var(--font-size-lg);
-    color: var(--color-text-secondary);
+    color: #6915C3;
     margin-bottom: var(--space-32);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeInUp 1s var(--ease-standard) 0.4s both;
-    font-weight: 500;
 }
+
 
 .hero-actions {
     display: flex;
