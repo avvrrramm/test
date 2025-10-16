@@ -33,40 +33,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 
-// Custom Cursor Management
+// Custom Cursor Management (no sticky, smooth follow)
 function initCustomCursor() {
     const cursor = document.querySelector('.custom-cursor');
     const isMobile = window.innerWidth <= 768;
-    
+
     if (isMobile || !cursor) return;
-    
+
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
-    
-    // Track mouse position
+
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         cursor.classList.add('active');
     });
-    
-    // Hide cursor when leaving window
+
     document.addEventListener('mouseleave', () => {
         cursor.classList.remove('active');
     });
-    
-    // Animate cursor with smooth following
+
     function animateCursor() {
-        const speed = 0.15;
+        // Трохи швидше реагує, але без "прилипання"
+        const speed = 0.3;
         cursorX += (mouseX - cursorX) * speed;
         cursorY += (mouseY - cursorY) * speed;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
+
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
+
+    // При наведенні просто збільшується — без магнітного ефекту
+    const hoverElements = document.querySelectorAll('a, button, .btn');
+    hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
+    });
+}
+
     
     // Add hover effects for interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .ripple-card, .nav-link, .social-link');
