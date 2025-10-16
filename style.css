@@ -2794,7 +2794,6 @@ a, button, .ripple-card, .nav-link, .social-link {
     }
 
 
-
 .partners {
     overflow: hidden;
     padding: 60px 0;
@@ -2832,5 +2831,99 @@ a, button, .ripple-card, .nav-link, .social-link {
 
     to {
         transform: translateX(-50%);
+    }
+}
+
+/* ===========================
+   📱 MOBILE & TABLET STYLES
+   =========================== */
+@media (max-width: 1024px) {
+    /* планшети */
+}
+
+@media (max-width: 768px) {
+    /* телефони */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 12px;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        display: none; /* потім можна вмикати JS */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        color: #6915C3;
+    }
+
+    .logo-navbar {
+        height: 60px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .team-member img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-track {
+        animation-duration: 60s; /* трохи повільніше */
+    }
+
+    .partner-item img {
+        height: 60px;
+        max-width: 120px;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
     }
 }
