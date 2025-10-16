@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 1000);
 });
 
-// Custom Cursor Management (no sticky, smooth follow)
+// Custom Cursor Management
 function initCustomCursor() {
     const cursor = document.querySelector('.custom-cursor');
     const isMobile = window.innerWidth <= 768;
@@ -43,56 +43,41 @@ function initCustomCursor() {
     let mouseX = 0, mouseY = 0;
     let cursorX = 0, cursorY = 0;
 
+    // Track mouse position
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
         cursor.classList.add('active');
     });
 
+    // Hide cursor when leaving window
     document.addEventListener('mouseleave', () => {
         cursor.classList.remove('active');
     });
 
+    // Animate cursor with smooth following
     function animateCursor() {
-        // Трохи швидше реагує, але без "прилипання"
-        const speed = 0.3;
+        const speed = 0.15;
         cursorX += (mouseX - cursorX) * speed;
         cursorY += (mouseY - cursorY) * speed;
 
-        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+
         requestAnimationFrame(animateCursor);
     }
     animateCursor();
 
-    // При наведенні просто збільшується — без магнітного ефекту
-    const hoverElements = document.querySelectorAll('a, button, .btn');
-    hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('cursor-hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('cursor-hover'));
-    });
-}
-
-    
     // Add hover effects for interactive elements
     const interactiveElements = document.querySelectorAll('a, button, .ripple-card, .nav-link, .social-link');
-    
+
     interactiveElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-        });
-        
-        element.addEventListener('mousedown', () => {
-            cursor.classList.add('click');
-        });
-        
-        element.addEventListener('mouseup', () => {
-            cursor.classList.remove('click');
-        });
+        element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        element.addEventListener('mousedown', () => cursor.classList.add('click'));
+        element.addEventListener('mouseup', () => cursor.classList.remove('click'));
     });
+}
 
 
 // Static Mission with Fade-in Animation
