@@ -1316,10 +1316,13 @@ a, button, .ripple-card, .nav-link, .social-link {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-weight: 900;
     margin-bottom: var(--space-24);
-    color: #6915C3;
+    color: #6915C3 !important;
     animation: fadeInUp 1s var(--ease-standard);
     letter-spacing: -0.02em;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
 }
+
 
 
 .hero-subtitle {
