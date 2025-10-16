@@ -2762,26 +2762,74 @@ a, button, .ripple-card, .nav-link, .social-link {
         transform: translateX(-50%);
     }
 }
+
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .logo-navbar {
-    height: 75px;
+    height: 130px;
     object-fit: contain;
     filter: brightness(0) saturate(100%) invert(14%) sepia(87%) saturate(6613%) hue-rotate(260deg) brightness(90%) contrast(95%);
     transition: transform 0.3s ease;
+    transform: translateY(0.02px);
 }
 
     .logo-navbar:hover {
-        transform: scale(1.05);
+        transform: scale(1.05) translateY(-2px);
     }
 
-.logo-text-navbar {
-    font-size: 1.6rem;
-    font-weight: 800;
-    color: #6915C3;
-    letter-spacing: -0.5px;
+
+.partners {
+    overflow: hidden;
+    padding: 60px 0;
+    position: relative;
+}
+
+.partners-track {
+    display: flex;
+    width: max-content;
+    animation: scrollInfinite 40s linear infinite;
+}
+
+.partner-item {
+    flex: 0 0 auto;
+    padding: 0 40px;
+}
+
+    .partner-item img {
+        height: 80px;
+        width: auto;
+        object-fit: contain;
+        opacity: 0.95;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+        .partner-item img:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+@keyframes scrollInfinite {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
 }
