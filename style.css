@@ -1101,7 +1101,6 @@ a, button, .ripple-card, .nav-link, .social-link {
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
-
 .nav-links {
     display: flex;
     gap: var(--space-24);
@@ -1109,7 +1108,7 @@ a, button, .ripple-card, .nav-link, .social-link {
 }
 
 .nav-link {
-    color: var(--brand-dark);
+    color: #6915C3;
     text-decoration: none;
     font-weight: 600;
     transition: all var(--duration-fast) var(--ease-standard);
@@ -1125,12 +1124,12 @@ a, button, .ripple-card, .nav-link, .social-link {
         left: 0;
         width: 0;
         height: 2px;
-        background: var(--brand-primary);
+        background: #6915C3;
         transition: width var(--duration-fast) var(--ease-standard);
     }
 
     .nav-link:hover {
-        color: var(--brand-primary);
+        color: #431180;
         transform: translateY(-1px);
     }
 
@@ -1138,6 +1137,7 @@ a, button, .ripple-card, .nav-link, .social-link {
         .nav-link.active::after {
             width: 100%;
         }
+
 
 .mobile-menu-btn {
     display: none;
@@ -1316,13 +1316,10 @@ a, button, .ripple-card, .nav-link, .social-link {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
     font-weight: 900;
     margin-bottom: var(--space-24);
-    color: #6915C3 !important;
+    color: #6915C3;
     animation: fadeInUp 1s var(--ease-standard);
     letter-spacing: -0.02em;
-    -webkit-background-clip: unset !important;
-    -webkit-text-fill-color: unset !important;
 }
-
 
 
 .hero-subtitle {
@@ -2765,4 +2762,27 @@ a, button, .ripple-card, .nav-link, .social-link {
     100% {
         transform: translateX(-50%);
     }
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-navbar {
+    height: 75px;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(14%) sepia(87%) saturate(6613%) hue-rotate(260deg) brightness(90%) contrast(95%);
+    transition: transform 0.3s ease;
+}
+
+    .logo-navbar:hover {
+        transform: scale(1.05);
+    }
+
+.logo-text-navbar {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #6915C3;
+    letter-spacing: -0.5px;
 }
