@@ -93,7 +93,7 @@ function initCustomCursor() {
             cursor.classList.remove('click');
         });
     });
-}
+
 
 // Static Mission with Fade-in Animation
 function initStaticMission() {
