@@ -2782,16 +2782,17 @@ a, button, .ripple-card, .nav-link, .social-link {
 }
 
 .logo-navbar {
-    height: 130px;
+    height: 55px;
+    width: auto;
     object-fit: contain;
-    filter: brightness(0) saturate(100%) invert(14%) sepia(87%) saturate(6613%) hue-rotate(260deg) brightness(90%) contrast(95%);
     transition: transform 0.3s ease;
-    transform: translateY(0.02px);
+    margin-top: 2px;
 }
 
     .logo-navbar:hover {
-        transform: scale(1.05) translateY(-2px);
+        transform: scale(1.05);
     }
+
 
 
 .partners {
@@ -3042,5 +3043,11 @@ a, button, .ripple-card, .nav-link, .social-link {
     .results-grid {
         grid-template-columns: repeat(4, 1fr) !important;
         gap: 32px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-navbar {
+        height: 40px;
     }
 }
