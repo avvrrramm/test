@@ -2782,7 +2782,7 @@ a, button, .ripple-card, .nav-link, .social-link {
 }
 
 .logo-navbar {
-    height: 25px;
+    height: 55px;
     width: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
